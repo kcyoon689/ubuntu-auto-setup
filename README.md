@@ -6,7 +6,7 @@ This includes NVIDIA drivers, CUDA, PyTorch, Docker, ROS 2, Miniconda, and essen
 ## 📋 Supported System
 
 - **OS**: Ubuntu 22.04 LTS (Jammy)
-- **GPU**: NVIDIA (Tested on RTX 4090 with Driver v535+)
+- **GPU**: NVIDIA (Tested on RTX 4090 with Driver)
 - **Shell**: Bash
 - **Network**: Internet connection required
 
@@ -17,7 +17,7 @@ This includes NVIDIA drivers, CUDA, PyTorch, Docker, ROS 2, Miniconda, and essen
 | Component     | Version                       |
 |---------------|-------------------------------|
 | OS            | Ubuntu 22.04                  |
-| GPU Driver    | NVIDIA 535 / 555              |
+| GPU Driver    | NVIDIA auto version           |
 | CUDA Toolkit  | 12.2 (driver-only install)    |
 | PyTorch       | 2.2.2 (CUDA 12.1 pip build)   |
 | Python        | 3.10 (via Miniconda)          |
@@ -29,13 +29,13 @@ This includes NVIDIA drivers, CUDA, PyTorch, Docker, ROS 2, Miniconda, and essen
 
 | Category              | Script                                | Description                                        |
 |-----------------------|---------------------------------------|----------------------------------------------------|
-| GPU Driver / CUDA     | `nvidia-driver_install.sh`       | Install NVIDIA driver (v535)                       |
+| GPU Driver / CUDA     | `nvidia-driver_install.sh`       | Install NVIDIA driver (autoinstall)                       |
 |                       | `cuda_install.sh`                | Install CUDA Toolkit 12.2                          |
 |                       | `torch_install.sh`               | Install PyTorch with CUDA 12.1 support             |
 | Docker                | `Docker_install.sh`              | Install Docker CE and Compose                      |
 |                       | `nvidia_docker_toolkit_install.sh`    | NVIDIA Container Toolkit for GPU Docker            |
 | Python Env            | `miniconda_install.sh`           | Install Miniconda + disable base env               |
-| ROS2                  | `ROS2-humble_install.sh`         | Install ROS 2 Humble desktop version               |
+| ROS2                  | `ROS2-humble_install.sh`         | Install ROS 2 Humble (desktop full)               |
 | Development Tools     | `vscode_install.sh`              | Install Visual Studio Code                         |
 |                       | `chrome_install.sh`              | Install Google Chrome                              |
 |                       | `cursor_install.sh`                   | Install Cursor editor                              |
@@ -56,14 +56,20 @@ cd ubuntu-auto-installation
 
 ```bash
 chmod +x *.sh
+chmod +x scripts/*.sh
 ```
 
 ### 3. Run the master install script
+
 ```bash
-./install_all.sh
+# Default installation (auto-selects NVIDIA driver)
+bash install_all.sh
+
+# Or specify versions
+bash install_all.sh --nvidia-driver 535 --cuda 12.2 --torch 2.2.2 --torch-cuda 12.1
 ```
-You will be prompted for your sudo password once.
-The scripts will execute in the recommended order automatically.
+
+The install order and dependencies are automatically managed.
 
 
 ### Installation Order
