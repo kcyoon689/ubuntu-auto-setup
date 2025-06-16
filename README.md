@@ -113,7 +113,7 @@ export ROS_DOMAIN_ID=10
 
 ### Project Structure
 ```
-ubuntu-auto-installation/
+ubuntu-auto-setup/
 ├── scripts/
 │   ├── chrome_install.sh
 │   ├── cuda_install.sh
