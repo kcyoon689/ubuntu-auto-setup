@@ -112,6 +112,7 @@ export ROS_DOMAIN_ID=10
 
 
 ### Project Structure
+```
 ubuntu-auto-installation/
 ├── scripts/
 │   ├── chrome_install.sh
@@ -127,7 +128,7 @@ ubuntu-auto-installation/
 │   ├── vscode_install.sh
 ├── install_all.sh
 └── README.md
-
+```
 
 
 ### 🙋 Contribution
