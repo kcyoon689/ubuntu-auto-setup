@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-wget https://downloader.cursor.sh/linux/appImage/x64 -O cursor.AppImage
+wget https://www.cursor.com/download/stable/linux-x64 -O cursor.AppImage
 chmod +x cursor.AppImage
 
 wget https://techajob.com/wp-content/uploads/cursor-logo.png -O cursor.png
