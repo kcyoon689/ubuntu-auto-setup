@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+sudo apt install fuse -y
+ sudo apt install libfuse2 -y
+
 wget https://www.cursor.com/download/stable/linux-x64 -O cursor.AppImage
 chmod +x cursor.AppImage
 
