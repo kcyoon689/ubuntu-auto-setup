@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+sudo apt update
+sudo apt install python3-pip -y
+
 ### 1. Install PyTorch 2.2.2 with CUDA 12.1 via pip
 echo "[✔] Installing PyTorch 2.2.2 (CUDA 12.1) via pip..."
 pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu121
